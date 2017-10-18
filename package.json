@@ -11,7 +11,7 @@
     "webpack": "^3.8.1"
   },
   "scripts": {
-    "build": "babel src -d dist"
+    "build": "webpack -p"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0"
