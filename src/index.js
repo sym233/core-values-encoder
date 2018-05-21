@@ -18,19 +18,11 @@ import "babel-polyfill";
 
     function str2utf8(str){
         // return in hex
-
-        const chars = Array.prototype.map.call(str, c=>{
-            let u = encodeURIComponent(c);
-            if(u === c){
-                u = c.codePointAt(0).toString(16);
-
-                assert(u.length === 2);
-
-            }
-            return u;
-        });
-
-        const concated = chars.join('').replace(/%/g, '').toUpperCase();
+    
+        const notEncoded = /[A-Za-z0-9\-\_\.\!\~\*\'\(\)]/g;
+        const str1 = str.replace(notEncoded, c=>c.codePointAt(0).toString(16));
+        let str2 = encodeURIComponent(str1);
+        const concated = str2.replace(/%/g, '').toUpperCase();
         return concated;
     }
 
