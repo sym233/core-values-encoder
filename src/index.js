@@ -105,6 +105,8 @@ import "babel-polyfill";
     }
 
     function valuesDecode(encoded){
+        encoded = encoded.replace(/民主/g,"闽煮").replace(/自由/g,"自油")
+
         const duo = [];
 
         for(let c of encoded){
