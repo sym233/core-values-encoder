@@ -14,7 +14,8 @@ import "babel-polyfill";
         return Math.random() >= 0.5;
     }
 
-    const values = '富强民主文明和谐自由平等公正法治爱国敬业诚信友善';
+    //const values = '富强民主文明和谐自由平等公正法治爱国敬业诚信友善';
+    const values = '富强闽煮文明和谐自油平等公正法治爱国敬业诚信友善';//防止成为每攵感词
 
     function str2utf8(str){
         // return in hex
@@ -104,6 +105,8 @@ import "babel-polyfill";
     }
 
     function valuesDecode(encoded){
+        encoded = encoded.replace(/民主/g,"闽煮").replace(/自由/g,"自油")
+
         const duo = [];
 
         for(let c of encoded){
